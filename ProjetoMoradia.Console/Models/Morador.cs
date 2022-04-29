@@ -8,7 +8,7 @@ namespace ProjetoMoradia.Models
 
         public Morador(string nome, string cpf, string dataNascimento)
         {
-            Nome = nome;
+            SetNome(nome);
             Cpf = cpf;
             SetDataNascimento(dataNascimento);
         }
