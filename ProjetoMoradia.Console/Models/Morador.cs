@@ -36,8 +36,18 @@ namespace ProjetoMoradia.Models
         public void SetDataNascimento(string dataNascimento)
         {
             var dataNascimentoDatetime = DateTime.Parse(dataNascimento);
+            //precisa comparar a "dataNasc" usando o "CompareTo" com "dataAtual" onde o resuntado será "1" ou "-1"
+            //se "dataNasc" for menor que "dataAtual", entao "dataNasc" deve ser salva
+            DateTime dataHoje = DateTime.Now;
+            if(dataNascimentoDatetime.CompareTo(dataHoje) < 1)
+            {
+                DataNascimento=dataNascimentoDatetime;
+            }
           
-            DataNascimento = dataNascimentoDatetime;
+            else 
+                {
+                    DataNascimento= DateTime.MinValue;
+                }
         }
 
         public DateTime GetDataDeNascimento()
