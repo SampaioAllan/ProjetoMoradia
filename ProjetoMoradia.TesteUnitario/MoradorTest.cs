@@ -36,4 +36,12 @@ public class MoradorTest
 
         Assert.Equal(nome, morador.GetNome());
     }
+    [Fact]
+    public void SalvarcpfMorador()
+    {
+        var nome = "Allan";
+        var morador = new Morador(nome, "22345678910", "29/04/2022");
+
+        Assert.Equal("22345678910", morador.GetCpf());
+    }
 }
